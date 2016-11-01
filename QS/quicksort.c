@@ -10,7 +10,7 @@
 
 #define LEN 25
 
-void QuickSort(int*, int, int);
+void QuickSort(int *, int, int);
 
 int * getUnsorted(){
 	static int ARR[LEN]; 
@@ -37,16 +37,16 @@ int partition(int *arr, int start, int end){
 	
 	for (int i = start; i < end; ++i){
 		if (*(arr + i) < pivot){
-			temp = *(arr + i);
-			*(arr + i) = *(arr + pin);
-			*(arr + pin) = temp;
+			temp = arr[i];
+			arr[i] = arr[pin];
+			arr[pin] = temp;
 			pin++;
 		}
 	}
 
-	temp = *(arr + end);
-	*(arr + end) = *(arr + pin);
-	*(arr + pin) = temp;
+	temp = arr[end];
+	arr[end] = arr[pin];
+	arr[pin] = temp;
 	
 	return pin;
 }
